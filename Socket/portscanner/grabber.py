@@ -22,7 +22,12 @@ class Grabber:
 def main():
     grabber = Grabber('13.245.12.219', 22)
     print('checking ...')
-    print(grabber.read())
+
+    try:
+        print(grabber.read())
+    except Exception as e:
+        print(e)
+
     print('done ...')
     grabber.close()
 
