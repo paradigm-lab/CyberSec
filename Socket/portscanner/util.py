@@ -1,5 +1,6 @@
 from timeit import default_timer as timer
 
+
 def timefunc(func):
     def inner(*args, **kwargs):
         start = timer()
@@ -8,4 +9,5 @@ def timefunc(func):
         message = f'{func.__name__} took {end - start} seconds'
         print(message)
         return result
+
     return inner

@@ -1,11 +1,12 @@
-import socket 
+import socket
 from util import timefunc
+
 
 class Scanner:
     def __init__(self, ip):
         self.ip = ip
         self.open_ports = []
-    
+
     def __repr__(self):
         return f'Scanner: {self.ip}'
 
@@ -28,6 +29,7 @@ class Scanner:
         with open(filepath, 'w') as f:
             f.write('\n'.join(open_ports))
 
+
 @timefunc
 def main():
     # IP to scan for open ports 
@@ -36,6 +38,7 @@ def main():
     scanner.scan(1, 30)
     scanner.write('./open_ports.txt')
     print(scanner.open_ports)
+
 
 if __name__ == '__main__':
     main()

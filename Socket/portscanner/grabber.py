@@ -1,8 +1,7 @@
 from util import timefunc
 
-
-
 import socket
+
 
 class Grabber:
     def __init__(self, ip, port):
@@ -18,6 +17,7 @@ class Grabber:
     def close(self):
         self.socket.close()
 
+
 @timefunc
 def main():
     grabber = Grabber('13.245.12.219', 22)
@@ -25,6 +25,7 @@ def main():
     print(grabber.read())
     print('done ...')
     grabber.close()
+
 
 if __name__ == '__main__':
     main()
