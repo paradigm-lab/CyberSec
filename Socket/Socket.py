@@ -1,4 +1,5 @@
-import socket 
+import socket
+import argparse
 from util import timefunc
 
 
@@ -29,14 +30,29 @@ class Scanner:
         with open(filepath, 'w') as f:
             f.write('\n'.join(open_ports))
 
+
 @timefunc
 def main():
-    # IP to scan for open ports
-    ip = '169.254.16.26'
-    scanner = Scanner(ip)
-    scanner.scan(1, 65535)
-    scanner.write('./open_ports')
-    print(scanner.open_ports)
+    # Creating the argparse object
+    parser = argparse.ArgumentParser()
+
+    # Adding the argument action
+    parser.add_argument('ip')
+
+    # CLI argument parsing method
+    args = parser.parse_args()
+
+    # Getting the argument from the command line and pass the argument into my Scanner class
+    scan = Scanner(args.ip)
+
+    # Calling the scan method to scan for the port numbers
+    scan.scan(1, 65535)
+
+    # writing the available port numbers into a file
+    scan.write('./open_ports')
+
+    # Giving the output of the available ports
+    print(scan.open_ports)
 
 
 if __name__ == "__main__":
