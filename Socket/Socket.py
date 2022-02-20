@@ -51,7 +51,10 @@ def main():
                                                                                          'default: %('
                                                                                          'default)s)')
 
-    # Types
+    parser.add_argument('-W', '--Write', '--file', default='./open_ports', help='Specify the file name default: %('
+                                                                                'default)s')
+
+    # Getting the string type from the user and convert into and integer value
     parser.add_argument('R1', help='Scan from port number', type=int)
     parser.add_argument('R2', help='to port number', type=int)
 
