@@ -46,10 +46,14 @@ def main():
     # - short vs long opts (short options and descriptive name)
     # - aliases  -> For the backward compatibility
     # - defaults
-    parser.add_argument('-i', '--internet protocol', '--inet', default='127.0.0.1', required=True, help='Specify the '
-                                                                                                        'ip address ('
-                                                                                                        'default: %('
-                                                                                                        'default)s)')
+    parser.add_argument('-i', '--internet protocol', '--inet', default='127.0.0.1', help='Specify the '
+                                                                                         'ip address ('
+                                                                                         'default: %('
+                                                                                         'default)s)')
+
+    # Types
+    parser.add_argument('R1', help='Scan from port number', type=int)
+    parser.add_argument('R2', help='to port number', type=int)
 
     # CLI argument parsing method
     args = parser.parse_args()
