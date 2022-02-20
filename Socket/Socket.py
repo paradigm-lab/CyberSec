@@ -46,7 +46,7 @@ def main():
     # - short vs long opts (short options and descriptive name)
     # - aliases  -> For the backward compatibility
     # - defaults
-    parser.add_argument('-i', '--ip', '--inet')
+    parser.add_argument('-i', '--internet protocol', '--inet', default='127.0.0.1', help='Specify the ip address (default: %(default)s)')
 
     # CLI argument parsing method
     args = parser.parse_args()
