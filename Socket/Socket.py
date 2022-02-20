@@ -42,6 +42,12 @@ def main():
     # - help for the positional Argument to give the description
     parser.add_argument('ip', help='Pass the Internet protocol(IP) to be scanned ')
 
+    # Optional
+    # - short vs long opts (short options and descriptive name)
+    # - aliases  -> For the backward compatibility
+    # - defaults
+    parser.add_argument('-i', '--ip', '--inet')
+
     # CLI argument parsing method
     args = parser.parse_args()
 
