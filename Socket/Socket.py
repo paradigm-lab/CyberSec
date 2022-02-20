@@ -37,7 +37,10 @@ def main():
     parser = argparse.ArgumentParser()
 
     # Adding the argument action
-    parser.add_argument('ip')
+    # Positional Argument
+    # By default the positional Argument are required by default
+    # - help for the positional Argument to give the description
+    parser.add_argument('ip', help='Pass the Internet protocol(IP) to be scanned ')
 
     # CLI argument parsing method
     args = parser.parse_args()
