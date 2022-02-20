@@ -62,7 +62,8 @@ def main():
     scan = Scanner(args.ip)
 
     # Calling the scan method to scan for the port numbers
-    scan.scan(1, 65535)
+    # Port number start from 1 to 65535
+    scan.scan(args.R1, args.R2)
 
     # writing the available port numbers into a file
     scan.write('./open_ports')
