@@ -13,3 +13,6 @@ class Network(object):
             network = self.ip + '/24'
 
         print("Scanning Please wait......")
+
+        nm = nmap.PortScanner()
+        nm.scan(hosts = network, arguments = '-sn')
