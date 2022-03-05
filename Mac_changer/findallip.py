@@ -16,3 +16,10 @@ class Network(object):
 
         nm = nmap.PortScanner()
         nm.scan(hosts = network, arguments = '-sn')
+
+        hosts_list = [(x, nm[x]['status']['State']) for x in nm.all_hosts()]
+
+        for host, status in hosts_list:
+            print("Host \t{}".format(host))
+
+
