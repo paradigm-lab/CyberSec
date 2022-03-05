@@ -23,3 +23,6 @@ class Network(object):
             print("Host \t{}".format(host))
 
 
+if __name__ = '__main__':
+    ne = Network()
+    ne.networkScanner()
