@@ -64,5 +64,5 @@ def main():
         print("[-] MAC address did not get changed")
 
 
-if __main__ == "__main__":
+if __name__ == "__main__":
     main()
