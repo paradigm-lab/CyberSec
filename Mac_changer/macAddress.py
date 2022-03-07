@@ -50,4 +50,19 @@ def get_current_mac(interface):
     else:
         print("[-] Could not read MAX address")
 
+def main():
+    options = get_arguments()
+    current_mac = get_current_mac(options.interface)
+    print("Current MAC = " + str(current_mac))
 
+
+    change_mac(options.interfaces, options.new_mac)
+    current_mac = get_current_mac(options.interface)
+    if current_mac == values.new_mac:
+        print("[+] MAC address successfully changed to = " + current_mac)
+    else:
+        print("[-] MAC address did not get changed")
+
+
+if __main__ == "__main__":
+    main()
