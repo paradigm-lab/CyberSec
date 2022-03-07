@@ -16,4 +16,21 @@ import re
 # re used for the Regular Expression
 
 
+def get_arguments():
+    # Creating an object that can handles user inputs from the Command-Line
+    parser = optparse.OptionParser()
+
+    # Adding Options to the Object
+    parser.add_option("-i", "--interface", dest="interface", help="Interface to change it's Mac address")
+    parser.add_option("-m", "--mac", dest="new_mac", help="New MAc address")
+    (options, arguments) = parser.parse_args()
+
+    # Control Structure 
+    if not options.interface:
+        parser.error("[-] Please specify an interface, use --help for more info")
+    elif not options.new_mac:
+        parse.error("[-] Please specify a new MAC address, use --help for more info")
+
+    return options
+
 
