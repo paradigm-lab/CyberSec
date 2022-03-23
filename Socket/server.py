@@ -1,9 +1,9 @@
 import socket
 
+
 # Private ip Address
 # It's going to give you the virtual box ip address
 # host = socket.gethostbyname(socket.gethostname())
-
 
 
 def main():
@@ -13,6 +13,7 @@ def main():
     result = server.connect_ex((HOST, PORT))
     print("Result is {}".format(result))
     server.close()
+
 
 if __name__ == "__main__":
     main()
